@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ufL-LB-XHg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v6E-O8-WpM">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
@@ -38,7 +38,53 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eCW-x4-Drz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="696" y="95"/>
+            <point key="canvasLocation" x="1553.4351145038167" y="93.661971830985919"/>
+        </scene>
+        <!--Persons List-->
+        <scene sceneID="xAh-so-RFZ">
+            <objects>
+                <tableViewController id="xS0-mh-D2x" customClass="SectionalPersonsListViewController" customModule="ContactList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="PSU-0m-8BN">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonCell" id="Cw2-WH-wsy">
+                                <rect key="frame" x="0.0" y="50" width="393" height="51"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cw2-WH-wsy" id="zvD-Oz-zZ4">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="51"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xS0-mh-D2x" id="C6I-Up-hD6"/>
+                            <outlet property="delegate" destination="xS0-mh-D2x" id="Qoq-5R-dtL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Persons List" id="4bP-9w-TzD"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UZi-MN-NOR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1120" y="827"/>
+        </scene>
+        <!--Contacts-->
+        <scene sceneID="WxN-7H-nJJ">
+            <objects>
+                <navigationController id="Kqx-dM-sNz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Contacts" image="person.fill" catalog="system" id="Kug-Xa-imk"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="sCh-Po-dBw">
+                        <rect key="frame" x="0.0" y="118" width="393" height="106"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xS0-mh-D2x" kind="relationship" relationship="rootViewController" id="Gwt-Rv-xOR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KOw-ZE-YjZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="343" y="827"/>
         </scene>
         <!--Person Details View Controller-->
         <scene sceneID="nUQ-Qe-boc">
@@ -85,12 +131,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFo-cP-gkM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1448" y="94"/>
+            <point key="canvasLocation" x="2373.2824427480914" y="93.661971830985919"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Contacts-->
         <scene sceneID="xQ1-QD-0SQ">
             <objects>
                 <navigationController id="ufL-LB-XHg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Contacts" image="person" catalog="system" id="2sX-gC-7Ca"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="gM3-LB-jdR">
                         <rect key="frame" x="0.0" y="118" width="393" height="106"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -101,10 +148,31 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VM3-tH-nFI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-208" y="95"/>
+            <point key="canvasLocation" x="718.32061068702285" y="94.366197183098592"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="eTD-dd-qCZ">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="v6E-O8-WpM" customClass="TabBarController" customModule="ContactList" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gtt-VX-dYc">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ufL-LB-XHg" kind="relationship" relationship="viewControllers" id="kuV-Q0-qJQ"/>
+                        <segue destination="Kqx-dM-sNz" kind="relationship" relationship="viewControllers" id="qm5-Fp-Cvr"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ixl-bp-KMn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-147" y="94"/>
         </scene>
     </scenes>
     <resources>
+        <image name="person" catalog="system" width="128" height="121"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
